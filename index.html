@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MainCrafts – Build Smarter</title>
+
+  <!-- Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER / STICKY NAVBAR
+       Logo (left) · Nav links (centre) · CTA button (right)
+       Hamburger button appears on mobile screens.
+  ============================================================ -->
+  <header id="navbar">
+
+    <!-- Brand name -->
+    <div class="logo">Main<span>Crafts</span></div>
+
+    <!-- Navigation menu (hidden on mobile until hamburger is clicked) -->
+    <nav id="mainNav">
+      <ul>
+        <li><a href="#hero"     class="nav-link active">Home</a></li>
+        <li><a href="#features" class="nav-link">Features</a></li>
+
+        <!-- Services with dropdown -->
+        <li class="dropdown">
+          <a href="#services" class="nav-link">
+            Services <i class="fas fa-chevron-down fa-xs"></i>
+          </a>
+          <ul class="dropdown-content">
+            <li><a href="#services"><i class="fas fa-code"></i>           Web Development</a></li>
+            <li><a href="#services"><i class="fas fa-pen-ruler"></i>      UI/UX Design</a></li>
+            <li><a href="#services"><i class="fas fa-chalkboard-user"></i>Mentorship</a></li>
+            <li><a href="#services"><i class="fas fa-briefcase"></i>      Career Guidance</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Desktop CTA -->
+    <a href="#contact" class="nav-cta">Get Started</a>
+
+    <!-- Hamburger button (visible only on mobile) -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <i class="fas fa-bars"></i>
+    </button>
+
+  </header>
+
+
+  <!-- ============================================================
+       HERO SECTION
+       Full-screen dark gradient with a headline, tagline,
+       and one CTA button. Subtle glow blobs in background.
+  ============================================================ -->
+  <section id="hero">
+
+    <div class="hero-content">
+
+      <!-- Small label above the heading -->
+      <p class="hero-eyebrow">
+        <i class="fas fa-rocket"></i>&nbsp; Made for students &amp; creators
+      </p>
+
+      <!-- Main headline — "MainCrafts" highlighted in sky blue -->
+      <h1>Build Smarter with <span>MainCrafts</span></h1>
+
+      <!-- Tagline / subheading -->
+      <p class="hero-sub">
+        Helping students and creators turn ideas into real-world digital projects.
+      </p>
+
+      <!-- Primary CTA — smooth scrolls to Features -->
+      <a href="#features" class="btn-primary">
+        Get Started &nbsp;<i class="fas fa-arrow-right"></i>
+      </a>
+
+    </div>
+
+    <!-- Subtle animated arrow hinting user to scroll -->
+    <div class="hero-scroll" aria-hidden="true">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       FEATURES SECTION
+       4 cards: Fast Learning · Responsive Design ·
+       Scalable Projects · Community Support
+  ============================================================ -->
+  <section id="features">
+
+    <div class="section-header">
+      <span class="section-tag">What We Offer</span>
+      <h2>Our Features</h2>
+      <p>Everything a student needs to go from idea to a working project.</p>
+    </div>
+
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-icon" style="background:#e0f2fe;color:#0284c7;">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <h3>Fast Learning</h3>
+        <p>Structured modules that help you pick up real skills quickly without feeling overwhelmed.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon" style="background:#dcfce7;color:#16a34a;">
+          <i class="fas fa-mobile-screen"></i>
+        </div>
+        <h3>Responsive Design</h3>
+        <p>Learn to build layouts that look great on every device — phone, tablet, or desktop.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon" style="background:#fef9c3;color:#ca8a04;">
+          <i class="fas fa-layer-group"></i>
+        </div>
+        <h3>Scalable Projects</h3>
+        <p>Start small, then grow. Projects are built with clean code so they scale as you do.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon" style="background:#ede9fe;color:#7c3aed;">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3>Community Support</h3>
+        <p>A peer community where you can ask questions, share work, and grow together.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       SERVICES SECTION
+       4 cards: Web Development · Frontend Design ·
+       Project Mentoring · Career Preparation
+  ============================================================ -->
+  <section id="services">
+
+    <div class="section-header">
+      <span class="section-tag">What We Do</span>
+      <h2>Our Services</h2>
+      <p>Practical services designed around what students and early-stage creators actually need.</p>
+    </div>
+
+    <div class="cards-grid">
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-code"></i></div>
+        <h3>Web Development</h3>
+        <p>Learn HTML, CSS, JavaScript, and frameworks by building real projects from scratch — not just following along.</p>
+        <a href="#contact" class="card-link">Learn more <i class="fas fa-arrow-right fa-xs"></i></a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-pen-ruler"></i></div>
+        <h3>Frontend Design</h3>
+        <p>Understand design systems, spacing, and color theory, and turn Figma mockups into clean responsive code.</p>
+        <a href="#contact" class="card-link">Learn more <i class="fas fa-arrow-right fa-xs"></i></a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-chalkboard-user"></i></div>
+        <h3>Project Mentoring</h3>
+        <p>Get guidance on personal or academic projects — code reviews, architecture advice, and unblocking tough problems.</p>
+        <a href="#contact" class="card-link">Learn more <i class="fas fa-arrow-right fa-xs"></i></a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-briefcase"></i></div>
+        <h3>Career Preparation</h3>
+        <p>Resume reviews, mock interviews, portfolio feedback, and tips on landing your first internship or developer role.</p>
+        <a href="#contact" class="card-link">Learn more <i class="fas fa-arrow-right fa-xs"></i></a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       CONTACT SECTION
+       Name · Email · Message · Send button
+       No backend — JS shows a success message on submit.
+  ============================================================ -->
+  <section id="contact">
+
+    <div class="section-header">
+      <span class="section-tag">Say Hello</span>
+      <h2>Contact Us</h2>
+      <p>Got a question or want to collaborate? Drop a message and we'll get back to you.</p>
+    </div>
+
+    <form class="contact-form" id="contactForm" novalidate>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="e.g. Priya Sharma" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5"
+          placeholder="Tell us what you're working on..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary">
+        Send Message &nbsp;<i class="fas fa-paper-plane"></i>
+      </button>
+
+      <!-- Shown by JS after successful submit -->
+      <p class="form-success" id="formSuccess">
+        <i class="fas fa-circle-check"></i>&nbsp; Thanks! We'll get back to you soon.
+      </p>
+
+    </form>
+
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+       Brand blurb · Quick links · Services · Legal
+       Bottom bar: © 2025 | Privacy Policy | Terms | Contact
+  ============================================================ -->
+  <footer>
+
+    <div class="footer-inner">
+
+      <!-- Column 1: Brand -->
+      <div class="footer-brand">
+        <div class="logo">Main<span>Crafts</span></div>
+        <p>Helping students build real things on the web — one project at a time.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Navigate -->
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="#hero">Home</a>
+        <a href="#features">Features</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <!-- Column 3: Services -->
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Web Development</a>
+        <a href="#services">Frontend Design</a>
+        <a href="#services">Mentorship</a>
+        <a href="#services">Career Guidance</a>
+      </div>
+
+      <!-- Column 4: Legal -->
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 MainCrafts. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <span>|</span>
+        <a href="#">Terms</a>
+        <span>|</span>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+  </footer>
+
+
+  <!-- Fixed back-to-top button (appears after 300px scroll) -->
+  <a href="#hero" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </a>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>

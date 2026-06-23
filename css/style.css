@@ -1,0 +1,869 @@
+/* ============================================================
+   RESET & BASE
+   Remove default browser margin/padding,
+   set box-sizing and base font.
+============================================================ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #F8FAFC;
+  color: #0F172A;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   COLOR REFERENCE
+   #0F172A  very dark navy   – text, hero bg
+   #1E293B  dark slate       – navbar, footer, service icons
+   #38BDF8  sky blue         – accent colour throughout
+   #F8FAFC  near white       – section backgrounds
+   #E2E8F0  light grey       – borders, alternate section bg
+============================================================ */
+
+
+/* ============================================================
+   REUSABLE: BUTTON
+============================================================ */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #38BDF8;
+  padding: 13px 32px;
+  border-radius: 8px;
+  border: 2px solid #38BDF8;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  background: #38BDF8;
+  color: #0F172A;
+  transform: translateY(-2px);
+}
+
+
+/* ============================================================
+   REUSABLE: SECTION HEADER
+   Used above each content section.
+============================================================ */
+.section-header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+/* Pill label above heading */
+.section-tag {
+  display: inline-block;
+  background: #e0f2fe;
+  color: #0284c7;
+  padding: 4px 16px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  margin-bottom: 12px;
+}
+
+.section-header h2 {
+  font-size: clamp(1.75rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 10px;
+}
+
+.section-header p {
+  color: #475569;
+  font-size: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+
+/* ============================================================
+   NAVBAR
+   Sticky, 3-column grid: logo | nav | cta + hamburger
+============================================================ */
+header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 18px 60px;
+  background: #1E293B;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: padding 0.3s, box-shadow 0.3s;
+}
+
+/* Shadow added by JS on scroll */
+header.scrolled {
+  padding: 13px 60px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Logo text */
+.logo {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #F8FAFC;
+  letter-spacing: 0.5px;
+  user-select: none;
+}
+
+.logo span {
+  color: #38BDF8;
+}
+
+/* Nav centred in middle column */
+nav {
+  justify-self: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 34px;
+  align-items: center;
+}
+
+/* Nav links */
+nav a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+  position: relative;
+  transition: color 0.25s;
+  white-space: nowrap;
+}
+
+/* Sliding underline on hover / active */
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #38BDF8;
+  transition: width 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #F8FAFC;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+/* ── Dropdown ── */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #F8FAFC;
+  min-width: 210px;
+  border-radius: 10px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.13);
+  list-style: none;
+  overflow: hidden;
+  z-index: 500;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 18px;
+  color: #1E293B;
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* No underline inside dropdown */
+.dropdown-content li a::after {
+  display: none;
+}
+
+.dropdown-content li a:hover {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+.dropdown-content li a i {
+  width: 16px;
+  text-align: center;
+  color: #38BDF8;
+  flex-shrink: 0;
+}
+
+/* CTA button – right side of navbar */
+.nav-cta {
+  justify-self: end;
+  background: #38BDF8;
+  color: #0F172A;
+  padding: 9px 22px;
+  border-radius: 7px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.25s, transform 0.2s;
+  white-space: nowrap;
+}
+
+.nav-cta:hover {
+  background: #7dd3fc;
+  transform: scale(1.03);
+}
+
+/* Hamburger – hidden on desktop */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #F8FAFC;
+  font-size: 1.35rem;
+  cursor: pointer;
+  justify-self: end;
+  padding: 4px 2px;
+  line-height: 1;
+}
+
+
+/* ============================================================
+   HERO SECTION
+============================================================ */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 120px 24px 90px;
+  background: linear-gradient(140deg, #0F172A 0%, #0c1e38 55%, #0F172A 100%);
+  color: #F8FAFC;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow blobs – decorative only */
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 30%, rgba(56,189,248,0.1), transparent),
+    radial-gradient(ellipse 50% 45% at 80% 70%, rgba(56,189,248,0.08), transparent);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+}
+
+/* Pill eyebrow label */
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  color: #7dd3fc;
+  padding: 6px 18px;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin-bottom: 28px;
+}
+
+#hero h1 {
+  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #F8FAFC;
+  margin-bottom: 20px;
+}
+
+#hero h1 span {
+  color: #38BDF8;
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: #94a3b8;
+  max-width: 500px;
+  margin: 0 auto 40px;
+  line-height: 1.75;
+}
+
+/* Bouncing scroll arrow */
+.hero-scroll {
+  position: absolute;
+  bottom: 30px;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.28);
+  animation: bounce 2.2s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(9px); }
+}
+
+
+/* ============================================================
+   SHARED CARD GRID
+   Used by Features and Services sections.
+============================================================ */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 26px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+/* ============================================================
+   FEATURES SECTION
+============================================================ */
+#features {
+  padding: 90px 60px;
+  background: #F8FAFC;
+}
+
+/* Feature card */
+.card {
+  background: #ffffff;
+  padding: 30px 26px;
+  border-radius: 14px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.1);
+}
+
+/* Coloured icon badge */
+.card-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 18px;
+  flex-shrink: 0;
+}
+
+.card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0F172A;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #64748b;
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+
+/* ============================================================
+   SERVICES SECTION
+============================================================ */
+#services {
+  padding: 90px 60px;
+  background: #E2E8F0;
+}
+
+.service-card {
+  background: #F8FAFC;
+  padding: 34px 28px;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.09);
+  border-color: #38BDF8;
+}
+
+/* Dark icon badge */
+.service-icon {
+  width: 52px;
+  height: 52px;
+  background: #1E293B;
+  color: #38BDF8;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.service-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0F172A;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #64748b;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+/* "Learn more →" text link */
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #0284c7;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: gap 0.2s, color 0.2s;
+}
+
+.card-link:hover {
+  gap: 10px;
+  color: #38BDF8;
+}
+
+
+/* ============================================================
+   CONTACT SECTION
+============================================================ */
+#contact {
+  padding: 90px 60px;
+  background: #F8FAFC;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* Name + Email side-by-side on desktop */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #334155;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 9px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: #0F172A;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #38BDF8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.13);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+/* Success message shown by JS */
+.form-success {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  color: #16a34a;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.form-success.visible {
+  display: flex;
+}
+
+
+/* ============================================================
+   FOOTER
+============================================================ */
+footer {
+  background: #1E293B;
+  color: #94a3b8;
+}
+
+/* 4-column grid inside footer */
+.footer-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding: 64px 60px 44px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Brand column */
+.footer-brand .logo {
+  margin-bottom: 14px;
+}
+
+.footer-brand p {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  max-width: 240px;
+  color: #64748b;
+}
+
+/* Social icons */
+.social-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+  background: #38BDF8;
+  color: #0F172A;
+}
+
+/* Link columns */
+.footer-col h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #F8FAFC;
+  margin-bottom: 16px;
+}
+
+.footer-col a {
+  display: block;
+  color: #64748b;
+  text-decoration: none;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  transition: color 0.25s;
+}
+
+.footer-col a:hover {
+  color: #38BDF8;
+}
+
+/* Bottom bar */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px 60px;
+  font-size: 0.82rem;
+  color: #475569;
+}
+
+.footer-bottom-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-bottom-links a {
+  color: #475569;
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.footer-bottom-links a:hover {
+  color: #38BDF8;
+}
+
+.footer-bottom-links span {
+  color: #334155;
+}
+
+
+/* ============================================================
+   BACK TO TOP BUTTON
+============================================================ */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 42px;
+  height: 42px;
+  background: #38BDF8;
+  color: #0F172A;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.25s;
+  z-index: 999;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+}
+
+
+/* ============================================================
+   RESPONSIVE – TABLET  ≤ 960px
+============================================================ */
+@media (max-width: 960px) {
+
+  header {
+    padding: 18px 32px;
+  }
+
+  header.scrolled {
+    padding: 13px 32px;
+  }
+
+  #features,
+  #services,
+  #contact {
+    padding: 80px 32px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    padding: 48px 32px 32px;
+  }
+
+  .footer-bottom {
+    padding: 18px 32px;
+  }
+}
+
+
+/* ============================================================
+   RESPONSIVE – MOBILE  ≤ 768px
+   Nav collapses into hamburger menu.
+============================================================ */
+@media (max-width: 768px) {
+
+  /* Two-column header: logo | hamburger */
+  header {
+    grid-template-columns: 1fr auto;
+    padding: 16px 20px;
+    row-gap: 0;
+  }
+
+  header.scrolled {
+    padding: 13px 20px;
+  }
+
+  /* Hide desktop CTA button */
+  .nav-cta {
+    display: none;
+  }
+
+  /* Show hamburger */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Nav hidden by default on mobile */
+  #mainNav {
+    display: none;
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 8px 0 14px;
+  }
+
+  /* Shown when JS adds .open class */
+  #mainNav.open {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  nav a {
+    display: block;
+    padding: 10px 4px;
+    font-size: 0.95rem;
+  }
+
+  /* No underline slide animation on mobile */
+  nav a::after {
+    display: none;
+  }
+
+  /* Dropdown becomes a static nested list on mobile */
+  .dropdown-content {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.04);
+    display: none;
+    margin-left: 14px;
+  }
+
+  /* Shown when JS adds .open class to the <li> */
+  .dropdown.open .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content li a {
+    color: #94a3b8;
+    padding: 8px 12px;
+    font-size: 0.875rem;
+  }
+
+  .dropdown-content li a:hover {
+    background: rgba(56, 189, 248, 0.08);
+    color: #38BDF8;
+  }
+
+  /* Hero */
+  #hero {
+    padding: 110px 20px 80px;
+  }
+
+  /* Sections */
+  #features,
+  #services,
+  #contact {
+    padding: 64px 20px;
+  }
+
+  /* Form row stacks vertically */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+  .footer-inner {
+    grid-template-columns: 1fr;
+    padding: 40px 20px 28px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    padding: 18px 20px;
+    gap: 6px;
+  }
+}
+
+
+/* ============================================================
+   RESPONSIVE – SMALL MOBILE  ≤ 480px
+============================================================ */
+@media (max-width: 480px) {
+
+  #hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-sub {
+    font-size: 0.95rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .back-to-top {
+    bottom: 18px;
+    right: 18px;
+  }
+}
