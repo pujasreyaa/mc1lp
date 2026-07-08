@@ -361,6 +361,82 @@ nav a.active::after {
 
 
 /* ============================================================
+   ABOUT SECTION
+============================================================ */
+#about {
+  padding: 90px 60px;
+  background: linear-gradient(135deg, #f8fbff 0%, #eef6ff 100%);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 36px;
+  align-items: center;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.about-copy h2 {
+  font-size: clamp(1.7rem, 2.2vw, 2.2rem);
+  color: #0F172A;
+  margin-bottom: 14px;
+}
+
+.about-copy p {
+  color: #475569;
+  font-size: 0.98rem;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.about-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  color: #334155;
+  font-size: 0.95rem;
+}
+
+.about-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-list i {
+  color: #38BDF8;
+}
+
+.about-panel {
+  background: #ffffff;
+  border: 1px solid #dbeafe;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+  display: grid;
+  gap: 14px;
+}
+
+.stat-card {
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f8fcff 0%, #eef7ff 100%);
+  border: 1px solid #e0f2fe;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 1.3rem;
+  color: #0F172A;
+}
+
+.stat-card span {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* ============================================================
    FEATURES SECTION
 ============================================================ */
 #features {
@@ -711,6 +787,7 @@ footer {
     padding: 13px 32px;
   }
 
+  #about,
   #features,
   #services,
   #contact {
@@ -819,10 +896,15 @@ footer {
   }
 
   /* Sections */
+  #about,
   #features,
   #services,
   #contact {
     padding: 64px 20px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
   }
 
   /* Form row stacks vertically */
