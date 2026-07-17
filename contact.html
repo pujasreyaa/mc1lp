@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact MainCrafts for mentorship, project guidance, and career support." />
+  <title>MainCrafts — Contact</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+</head>
+<body>
+  <header id="navbar">
+    <div class="logo">Main<span>Crafts</span></div>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        <li><a href="submissions.html" class="nav-link">Submissions</a></li>
+      </ul>
+    </nav>
+    <a href="submissions.html" class="nav-cta">View Submissions</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <main class="contact-page-shell">
+    <section class="page-hero page-hero-light contact-hero">
+      <div class="page-hero-copy">
+        <span class="section-tag">Contact</span>
+        <h1>Send us a message and we’ll respond quickly.</h1>
+        <p>Fill in the contact form below to ask about mentorship, project feedback, or internships.</p>
+      </div>
+    </section>
+
+    <section class="page-section page-section-narrow">
+      <div class="contact-grid">
+        <article class="contact-panel">
+          <h2>Get in touch</h2>
+          <p>Your message will be saved locally and shown on the submissions page after submission.</p>
+          <div class="contact-stats">
+            <div>
+              <strong>Quick response</strong>
+              <span>Reliable client-side feedback</span>
+            </div>
+            <div>
+              <strong>Secure</strong>
+              <span>Data stays in your browser storage</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="contact-form-card">
+          <form id="contactForm" novalidate>
+            <div class="form-heading">
+              <span class="section-tag">Message Us</span>
+              <h2>Contact Form</h2>
+            </div>
+
+            <div class="input-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name" />
+              <p class="input-message" id="nameError"></p>
+            </div>
+
+            <div class="input-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
+              <p class="input-message" id="emailError"></p>
+            </div>
+
+            <div class="input-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" placeholder="Tell us what you’re working on..."></textarea>
+              <p class="input-message" id="messageError"></p>
+            </div>
+
+            <button type="submit" class="btn-primary btn-full">Submit Message</button>
+          </form>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">Main<span>Crafts</span></div>
+        <p>Contact page built with glassmorphism, validation, and LocalStorage support.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="submissions.html">Submissions</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 MainCrafts. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer"></div>
+  <script src="js/script.js"></script>
+  <script type="module" src="js/contact.js"></script>
+</body>
+</html>

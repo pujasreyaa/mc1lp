@@ -949,3 +949,213 @@ footer {
     right: 18px;
   }
 }
+
+/* ============================================================
+   PAGE HERO VARIANTS
+============================================================ */
+.page-hero {
+  padding: 100px 60px 80px;
+  border-radius: 28px;
+  margin: 40px auto 24px;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero-light {
+  background: linear-gradient(135deg, #ffffff 0%, #f3f8ff 100%);
+  color: #0f172a;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.08);
+}
+
+.page-hero-dark {
+  background: linear-gradient(135deg, #0f172a 0%, #111827 100%);
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 22px 80px rgba(15, 23, 42, 0.16);
+}
+
+.page-hero-copy {
+  max-width: 580px;
+}
+
+.page-hero-copy .section-tag {
+  background: rgba(56, 189, 248, 0.12);
+  color: #38bdf8;
+}
+
+.page-hero-copy h1 {
+  font-size: clamp(2.1rem, 3.7vw, 3.2rem);
+  margin: 1rem 0 1rem;
+  line-height: 1.05;
+}
+
+.page-hero-copy p {
+  color: inherit;
+  max-width: 520px;
+  line-height: 1.8;
+}
+
+.hero-visual {
+  min-height: 260px;
+  border-radius: 24px;
+  position: relative;
+}
+
+.hero-visual-about {
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 33%),
+              radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.2), transparent 28%),
+              linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+}
+
+.hero-visual-services {
+  background: radial-gradient(circle at top left, rgba(220, 38, 38, 0.12), transparent 25%),
+              radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.16), transparent 28%),
+              linear-gradient(180deg, #0f172a 0%, #111827 100%);
+}
+
+.hero-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  opacity: 0.9;
+}
+
+.page-section {
+  margin: 0 auto 60px;
+  max-width: 1150px;
+  padding: 0 0 0;
+}
+
+.page-section-narrow {
+  max-width: 980px;
+}
+
+.feature-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.4rem;
+  color: #334155;
+}
+
+.page-hero {
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 980px) {
+  .page-hero {
+    grid-template-columns: 1fr;
+    padding: 80px 32px 60px;
+  }
+}
+
+@media (max-width: 680px) {
+  .page-hero {
+    padding: 64px 24px 48px;
+  }
+  .page-hero-copy h1 {
+    font-size: 2rem;
+  }
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.testimonial-card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 2rem;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.testimonial-card p {
+  color: #475569;
+  line-height: 1.8;
+}
+
+.testimonial-card footer {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  color: #0f172a;
+}
+
+.spotlight-card {
+  background: linear-gradient(135deg, #ffffff 0%, #eef7ff 100%);
+  border-radius: 24px;
+  padding: 2rem;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 18px 46px rgba(15, 23, 42, 0.07);
+}
+
+.spotlight-card h3 {
+  margin-bottom: 1rem;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.stat-grid div {
+  background: #f8fbff;
+  border-radius: 18px;
+  padding: 1.2rem 1rem;
+  border: 1px solid rgba(56, 189, 248, 0.18);
+}
+
+.stat-grid span {
+  color: #475569;
+}
+
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: grid;
+  gap: 0.75rem;
+  z-index: 1100;
+  max-width: 340px;
+}
+
+.toast {
+  padding: 1rem 1.15rem;
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.14);
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.toast.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast-success {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+}
+
+.toast-error {
+  background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+}
+
+/* ============================================================
+   BACK TO TOP BUTTON
+============================================================ */

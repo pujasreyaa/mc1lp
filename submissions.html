@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Review saved contact submissions from MainCrafts with live search and deletion controls." />
+  <title>MainCrafts — Submissions</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/submissions.css" />
+</head>
+<body>
+  <header id="navbar">
+    <div class="logo">Main<span>Crafts</span></div>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="submissions.html" class="nav-link active">Submissions</a></li>
+      </ul>
+    </nav>
+    <a href="contact.html" class="nav-cta">New Message</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <main class="submissions-page-shell">
+    <section class="page-hero page-hero-dark submissions-hero">
+      <div class="page-hero-copy">
+        <span class="section-tag">Submissions</span>
+        <h1>All saved contact messages.</h1>
+        <p>Search, review, and manage stored contact submissions from LocalStorage.</p>
+      </div>
+    </section>
+
+    <section class="page-section page-section-narrow">
+      <div class="submissions-actions">
+        <div class="search-grid">
+          <label>
+            <span>Name</span>
+            <input type="search" id="searchName" placeholder="Search by name" autocomplete="off" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="search" id="searchEmail" placeholder="Search by email" autocomplete="off" />
+          </label>
+        </div>
+        <div class="actions-row">
+          <div class="submission-summary">
+            <span id="submissionCount">0 submissions</span>
+          </div>
+          <button class="btn-secondary" id="deleteAll">Delete All</button>
+        </div>
+      </div>
+
+      <div class="submissions-loader" id="pageLoader" aria-hidden="true">
+        <div class="loader-ring"></div>
+        <span>Loading submissions...</span>
+      </div>
+
+      <div id="submissionsList" class="submissions-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">Main<span>Crafts</span></div>
+        <p>Submissions are kept in browser storage and rendered live.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 MainCrafts. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer"></div>
+  <script src="js/script.js"></script>
+  <script type="module" src="js/submissions.js"></script>
+</body>
+</html>
